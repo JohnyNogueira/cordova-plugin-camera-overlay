@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.example.sample.plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PluginName</name>
+    <js-module name="PluginName" src="www/PluginName.js">
+        <clobbers target="PluginName" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PluginName">
+                <param name="android-package" value="com.example.sample.plugin.PluginName" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-permission android:name="android.hardware.camera" />
+            <uses-permission android:name="android.hardware.camera.autofocus" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="New Activity" android:name="com.example.sample.plugin.NewActivity"></activity>
+            <class android:label="Camera Preview" android:name="com.example.sample.plugin.CameraPreview"></class>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/PluginName.java" target-dir="src/com/example/sample/plugin" />
+        <source-file src="src/android/NewActivity.java" target-dir="src/com/example/sample/plugin" />
+        <source-file src="src/android/CameraPreview.java" target-dir="src/com/example/sample/plugin" />
+        <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
+        <activity android:name="com.example.sample.plugin.NewActivity"
+            android:label="New Activity">
+            <intent-filter>
+            <!-- We are going to use this name to start the activity later in Java -->
+            <action android:name="com.example.sample.plugin.NewActivity" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </platform>
+</plugin>

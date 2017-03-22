@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!-- Camera Preview -->
+  <FrameLayout
+    android:id="@+id/camera_preview"
+    android:layout_marginTop="100dip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+  <!-- /End Camera Preview -->
+
+  <!-- Overlay -->
+  <RelativeLayout
+    android:id="@+id/overlay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:colorBackground"
+    android:layout_alignParentBottom="true">
+
+    <Button
+      android:id="@+id/btn_close"
+      android:layout_height="wrap_content"
+      android:layout_width="54dip"
+      android:layout_marginBottom="20dip"
+      android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentLeft="true"/>
+
+    <Button
+      android:id="@+id/btn_take"
+      android:layout_height="wrap_content"
+      android:layout_width="54dip"
+      android:layout_marginBottom="20dip"
+      android:drawableLeft="@android:drawable/ic_menu_camera"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"/>
+    <!-- Put your Content Here -->
+
+  </RelativeLayout>
+  <!-- /End Overlay -->
+
+
+</RelativeLayout>
